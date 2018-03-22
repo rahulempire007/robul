@@ -38,6 +38,7 @@
 
         android:hint="Enter Name/Addres/Lab Name"/>
 
+
     <EditText
         android:layout_marginTop="5dp"
         android:textColorHint="#fff"
@@ -86,7 +87,7 @@
 
 
             <RadioButton
-                android:id="@+id/radioMaleIDforconsultdoctor"
+                android:id="@+id/freeplanID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FREE"
@@ -96,7 +97,7 @@
 
             <RadioButton
                 android:textSize="20sp"
-                android:id="@+id/radioFemaleIDforconsultdoctor"
+                android:id="@+id/purchaseplanID"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,7 +130,7 @@
             android:layout_width="120dp"
             android:layout_height="30dp"
 
-            android:id="@+id/occupationspinnerID"
+            android:id="@+id/specialistID"
 
             android:entries="@array/doctorspecialist"
             android:layout_marginTop="15dp"
@@ -180,14 +181,15 @@
 
         <Button
 
+            android:id="@+id/bookapointmentID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BACK"
+            android:text="BookAppointment"
             android:textStyle="bold|italic"
             android:layout_marginBottom="10dp"
             android:textColor="#000"
             android:textSize="16sp"
-     android:layout_marginLeft="100dp"
+     android:layout_marginLeft="20dp"
             android:background="@drawable/buttonstyle"/>
 
 
