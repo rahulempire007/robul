@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private Button continueButton;
     String lusername,lpassword;
     private ProgressBar pb;
+    protected static String userid;
     public static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
     private String TAG="MainActivity";
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                                     if (message.compareTo("success") == 0) {
 
                                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
+                                        userid=loginResponse.getData().getId();
 
 
                                         //Intent intent2=new Intent(MainActivity.this,DashboardActivity.class);
