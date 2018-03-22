@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity {
-    LinearLayout appoint_list,visitReportlayout;
+    LinearLayout profilelayout,visitReportlayout;
     Bundle bundle;
     TextView consultdoctorTV;
     @Override
@@ -19,7 +19,7 @@ public class DashboardActivity extends AppCompatActivity {
         consultdoctorTV=(TextView)findViewById(R.id.consultdoctorid);
         visitReportlayout=(LinearLayout)findViewById(R.id.visitreportlayoutId);
 
-        appoint_list=(LinearLayout)findViewById(R.id.dashboardprofile);
+        profilelayout=(LinearLayout)findViewById(R.id.dashboardprofile);
 visitReportlayout.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -27,7 +27,7 @@ visitReportlayout.setOnClickListener(new View.OnClickListener() {
         startActivity(intent);
     }
 });
-        appoint_list.setOnClickListener(new View.OnClickListener() {
+        profilelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             Intent intent=new Intent(DashboardActivity.this,SetupProfile.class);
