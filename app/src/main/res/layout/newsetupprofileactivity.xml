@@ -10,20 +10,26 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="#3b5998"
+
         android:layout_height="match_parent">
 
 
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:orientation="horizontal">
 
+
             <ImageView
+                android:id="@+id/imageViewforsetupprofile"
                 android:layout_width="160dp"
                 android:layout_height="130dp"
                 app:srcCompat="@drawable/logo"/>
+
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -80,10 +86,11 @@
             android:text="CONTACT INFORMATION:"
             android:background="@drawable/buttonstyle"
             android:textSize="15sp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+           android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -113,7 +120,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -152,7 +159,7 @@ android:background="@drawable/buttonstyle"
             android:layout_gravity="center"/>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -199,7 +206,7 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+           android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -235,7 +242,7 @@ android:background="@drawable/buttonstyle"
                 <RadioButton
                     android:textSize="20sp"
 
-                    android:id="@+id/Unmarried"
+                    android:id="@+id/unmarriedid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/unmarried"/>
@@ -248,7 +255,7 @@ android:background="@drawable/buttonstyle"
 
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+           android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -279,7 +286,8 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -309,7 +317,8 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -337,6 +346,7 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -344,13 +354,7 @@ android:background="@drawable/buttonstyle"
             android:orientation="horizontal"
             >
 
-            <TextView
-                android:textColor="#fff"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IdentityProof:"
-                android:textSize="15sp"
-                android:layout_gravity="center"/>
+
             <Spinner
 
                 android:layout_width="150dp"
@@ -362,10 +366,20 @@ android:background="@drawable/buttonstyle"
                 android:layout_marginLeft="4dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
+            <EditText
+                android:id="@+id/identityno"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter Identity Num"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -394,7 +408,7 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+           android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -423,7 +437,7 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -452,7 +466,7 @@ android:background="@drawable/buttonstyle"
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -467,20 +481,21 @@ android:background="@drawable/buttonstyle"
                 android:textSize="15sp"
                 android:layout_gravity="center"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/setupbmi"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
 
                 android:layout_marginLeft="75dp"
                 android:background="@drawable/style"
-                android:hint="BMI"
+
                 android:padding="15dp"
                 android:textColorHint="@color/white"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -492,7 +507,7 @@ android:background="@drawable/buttonstyle"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@drawable/buttonstyle"
-                android:layout_marginLeft="120dp"
+
                 android:layout_marginTop="1dp"
                 android:text="UPDATE Information"
                 android:textSize="15sp"
