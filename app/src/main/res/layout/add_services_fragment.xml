@@ -41,28 +41,28 @@
                 android:layout_gravity="center"/>
 
             <EditText
+                android:id="@+id/doctorfacilityNameID"
                 android:layout_marginTop="26dp"
                 android:textColorHint="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:id="@+id/searchdoctorID"
+
 android:gravity="center"
                 android:hint="Facility Name"/>
 
             <Spinner
+                android:id="@+id/spinner"
 
-                android:layout_width="120dp"
+                android:layout_width="220dp"
                 android:layout_height="30dp"
-
-                android:id="@+id/mySpinner"
-                android:background="@color/white"
-
+                android:layout_gravity="center"
                 android:entries="@array/doctorspecialist"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="95dp"
+                android:background="@color/white"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp" />
 
             <EditText
                 android:layout_marginTop="20dp"
@@ -71,7 +71,7 @@ android:gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:inputType="textMultiLine"
-                android:id="@+id/descriptionId"
+               android:id="@+id/doctordescriptionID"
 android:gravity="center"
                 android:hint="Description"/>
         </LinearLayout>
