@@ -53,6 +53,7 @@ bundle=getIntent().getExtras();
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(DoctorDashboardActivity.this,ServicesActivity.class);
+                intent.putExtra("userid",bundle.getString("userid"));
                 startActivity(intent);
 
             }
@@ -60,7 +61,7 @@ bundle=getIntent().getExtras();
         setupDoctorProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(DoctorDashboardActivity.this,SetupProfile.class);
+                Intent intent=new Intent(DoctorDashboardActivity.this,SetupProfileForDoctor.class);
                // intent.putExtra("mci_number",bundle.getString("mci_number"));
                 intent.putExtra("firstname",bundle.getString("firstname"));
                 intent.putExtra("userid",bundle.getString("userid"));
