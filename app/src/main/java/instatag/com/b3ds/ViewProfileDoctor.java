@@ -14,8 +14,8 @@ public class ViewProfileDoctor extends AppCompatActivity {
         setContentView(R.layout.activity_view_profile_doctor);
         viewname=(TextView)findViewById(R.id.firstNameis);
 
-       // bundle=getIntent().getExtras();
-        //viewname.setText(bundle.getString("firstname"));
+        bundle=getIntent().getExtras();
+        viewname.setText(bundle.getString("firstname"));
 
     }
 }
