@@ -30,7 +30,7 @@ public class SetupProfileForDoctor extends AppCompatActivity {
     private Spinner identitytype;
     private int identitytype_val;
     Bundle bundle;
-Button updateProfilebtn;
+    Button updateProfilebtn;
     public  static  final MediaType JSON= MediaType.parse("application/json:charset=utf-8");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
