@@ -4,6 +4,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="true" />
 
     <meta-data
         android:name="com.facebook.sdk.ApplicationId"
@@ -34,7 +42,13 @@
         <activity android:name=".ConsultDoctorActivity" />
         <activity android:name=".VisitReportActivity" />
         <activity android:name=".DoctorDashboardActivity" />
-        <activity android:name=".ServicesActivity"></activity>
+        <activity android:name=".ServicesActivity" />
+        <activity android:name=".BookAppointmentActivity" />
+        <activity android:name=".SetupProfileForDoctor" />
+        <activity android:name=".ViewProfileDoctor" />
+        <activity android:name=".DisplayDoctorList" />
+        <activity android:name=".CaseDetailActivity" />
+        <activity android:name=".ViewProfilePatient"></activity>
     </application>
 
 </manifest>
