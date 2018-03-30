@@ -124,7 +124,11 @@ public class MainActivity extends AppCompatActivity {
                                             intent.putExtra("mobile", loginResponse.getData().getMobile());
                                             intent.putExtra("lastname", loginResponse.getData().getLastName());
                                             intent.putExtra("email", loginResponse.getData().getEmail());
-                                            intent.putExtra("userid", loginResponse.getData().getId());
+                                            intent.putExtra("userid",loginResponse.getData().getId());
+                                           intent.putExtra("address",loginResponse.getData().getAddress().toString());
+
+
+                                            //intent.putExtra("userid", loginResponse.getData().getId());
                                             //intent2.putExtras(intent);
                                             startActivity(intent);
                                         }
@@ -136,6 +140,12 @@ public class MainActivity extends AppCompatActivity {
                                             intent.putExtra("lastname", loginResponse.getData().getLastName());
                                             intent.putExtra("email", loginResponse.getData().getEmail());
                                             intent.putExtra("userid", loginResponse.getData().getId());
+                                            intent.putExtra("qualification",(String)loginResponse.getData().getQualification());
+                                            intent.putExtra("consultationtime",loginResponse.getData().getConsultationTime());
+                                            intent.putExtra("identitytype",(String)loginResponse.getData().getIdentityType());
+                                           intent.putExtra("identityid",(String)loginResponse.getData().getIdentityId());
+
+
                                             //intent2.putExtras(intent);
                                             startActivity(intent);
 
