@@ -128,7 +128,8 @@ public class AddServices extends Fragment {
                             public void run() {
                                 if (isSuccessful) {
 
-                                    Toast.makeText(getContext(), "Update successful "+MainActivity.userid, Toast.LENGTH_LONG).show();
+                                   // Toast.makeText(getContext(), "Update successful "+MainActivity.userid, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), "Succesfully Added ", Toast.LENGTH_LONG).show();
                                     //Intent intent=new Intent(VerificationChoiceActivity.this,SetPasswordActivity.class);
                                     //intent.putExtra("userid",userid);
                                     //startActivity(intent);
