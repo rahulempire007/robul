@@ -31,6 +31,7 @@
     <string name="registered_emailid">Enter Email</string>
     <string name="back">Back</string>
     <string name="submit">Submit</string>
+    <string name="discuss_about_header">Select One</string>
     <!-- Button text -->
     <string name="btn_logout_from_google">Logout from Google</string>
     <string name="btn_revoke_access">Revoke Access</string>
@@ -47,6 +48,7 @@
     <string name="female">Female</string>
     <string name="married">Married</string>
     <string name="unmarried">Unmarried</string>
+
 
     <!-- spinner-->
     <string name="salutation_prompt">Choose salutation</string>
@@ -68,14 +70,14 @@
 
 
     <string-array name="doctorspecialist">
-        <item>Specialty</item>
-        <item>Allergology.</item>
+
+        <item>Allergology</item>
         <item>Andrology</item>
         <item>Anesthesia</item>
-        <item>Angiology.</item>
-        <item>Biomedicine.</item>
-        <item>Dermatology.</item>
-        <item>DisasterMedicine.</item>
+        <item>Angiology</item>
+        <item>Biomedicine</item>
+        <item>Dermatology</item>
+        <item>DisasterMedicine</item>
     </string-array>
 
 
@@ -102,7 +104,9 @@
 
 
     <string-array name="identity_proof_entries">
+        <item>Select Identity</item>
         <item>Driving License</item>
+
         <item>Aadhaar Card</item>
         <item>Passport</item>
         <item>Pan Card</item>
