@@ -54,17 +54,14 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class SetupProfile extends Activity {
-
-
-  ImageView imageView;
-
-
-    private EditText identityno,firstname,lastname,email,mobile,address,height,weight;
+    ImageView imageUpload;
+    private EditText identityno,firstname,lastname,email,address,height,weight;
     private int gender=1,marrital=1,occupation_val,ethinicity_val,bloodgroup_val,identitytype_val;
-    private TextView bmi;
+    private TextView bmi,mobile;
     private RadioButton radioButtonMale,radioButtonFemale,radioButtonMarried,radioButtonUnmarried;
     private Spinner ethinicity,bloodgroup,occupation,identitytype;
     private Button submit;
+    Bundle bundle;
     public  static  final MediaType JSON= MediaType.parse("application/json:charset=utf-8");
 
     @Override
@@ -73,13 +70,13 @@ public class SetupProfile extends Activity {
         setContentView(R.layout.newsetupprofileactivity);
         Bundle bundle = getIntent().getExtras();
 
-        imageView = (ImageView)findViewById(R.id.imageViewforsetupprofile);
+        //imageView = (ImageView)findViewById(R.id.imageviewforsetupProfile);
         firstname=(EditText)findViewById(R.id.setupfirstname);
         lastname=(EditText)findViewById(R.id.setuplastname);
         email=(EditText)findViewById(R.id.setupemail);
-        mobile=(EditText)findViewById(R.id.setupmobile);
-
-
+        mobile=(TextView) findViewById(R.id.setupmobile);
+        //imageView=(ImageView)findViewById(R.id.img);
+        imageUpload=(ImageView)findViewById(R.id.uploadpImageID);
         submit=(Button)findViewById(R.id.submitprofile);
         address =(EditText)findViewById(R.id.setupaddress);
         identityno =(EditText)findViewById(R.id.identityno);
@@ -174,6 +171,8 @@ public class SetupProfile extends Activity {
 
         mobile.setText(bundle.getString("mobile"));
 
+        address.setText(bundle.getString("address"));
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -222,9 +221,10 @@ public class SetupProfile extends Activity {
                                     bmi.setText(Double.toString(wgt/hgtsq));
                                     Toast.makeText(getApplicationContext(),"Update successful",Toast.LENGTH_LONG).show();
 
-                                    //Intent intent=new Intent(VerificationChoiceActivity.this,SetPasswordActivity.class);
+                                    Intent intent=new Intent(SetupProfile.this,ViewProfilePatient.class);
                                     //intent.putExtra("userid",userid);
-                                    //startActivity(intent);
+                                    startActivity(intent);
+                                    finish();
                                 }
                                 else{
                                     Toast.makeText(getApplicationContext(),"OOPS!!",Toast.LENGTH_LONG).show();
@@ -252,7 +252,7 @@ public class SetupProfile extends Activity {
     private Request profile_request(){
         JSONObject postdata = new JSONObject();
         try {
-            postdata.put("id",MainActivity.userid);
+            postdata.put("user_id",MainActivity.userid);
             postdata.put("weight",weight.getText().toString());
             postdata.put("height",height.getText().toString());
             postdata.put("gender",Integer.toString(gender));
