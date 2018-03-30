@@ -8,70 +8,117 @@
     tools:context="instatag.com.b3ds.ConsultDoctorActivity"
     android:background="@color/white">
 
-<LinearLayout
-    android:background="#0084ff"
-    android:orientation="vertical"
-    android:layout_gravity="center"
 
-    android:layout_width="304dp"
-    android:layout_marginTop="30dp"
-    android:layout_height="wrap_content">
+
 
     <TextView
-
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Doctor:"
-       android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Search Doctor"
         android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginLeft="25dp"
         android:textSize="25sp"
-        android:layout_gravity="center"/>
+        />
 
-    <EditText
-        android:layout_marginTop="26dp"
-        android:textColorHint="#fff"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/searchdoctorID"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
-        android:hint="Enter Name/Addres/Lab Name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Enter Doctro/Lab/Address"
+
+            android:textColor="#f60d0909"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Doctor"
+            android:id="@+id/searchdoctorID"
+
+            android:textColor="#000"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/style1"
+            android:padding="10dp"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
 
 
-    <EditText
-        android:layout_marginTop="5dp"
-        android:textColorHint="#fff"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/searchaddressId"
-        android:hint="Enter Your Address" />
-</LinearLayout>
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
-<LinearLayout
-    android:background="#0084ff"
-    android:layout_marginTop="15dp"
-    android:layout_gravity="center"
-    android:orientation="vertical"
-    android:layout_width="316dp"
-    android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Your Address"
+
+            android:textColor="#f60d0909"
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="city name"
+            android:id="@+id/searchaddressId"
+
+            android:textColor="#000"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/style1"
+            android:padding="10dp"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
     <TextView
-
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose Plan:"
+        android:layout_marginTop="30dp"
+        android:text="Choose Plan"
         android:textStyle="bold"
-        android:textColor="#fff"
+        android:textColor="#000"
+        android:layout_marginLeft="25dp"
         android:textSize="25sp"
-        android:layout_gravity="center"/>
+        />
+
 
     <LinearLayout
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
         android:orientation="vertical">
 
 
@@ -80,8 +127,9 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:id="@+id/genderID"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/style1"
             android:layout_height="wrap_content">
 
 
@@ -98,7 +146,7 @@
             <RadioButton
                 android:textSize="20sp"
                 android:id="@+id/purchaseplanID"
-
+android:layout_marginLeft="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="PAID" />
@@ -108,51 +156,43 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
 
         <TextView
-
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Select SPECIALISTS:"
-            android:textColor="@color/white"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/buttonstyle2"
+            android:layout_marginLeft="10dp"
+            android:text="Select Specialty"
+            android:textColor="#f60d0909"
             android:textSize="15sp"
             />
 
         <Spinner
-
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-
             android:id="@+id/specialistID"
 
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
             android:entries="@array/doctorspecialist"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="@drawable/style1"
+
+            android:layout_marginTop="5dp" />
+
+
 
     </LinearLayout>
 
-</LinearLayout>
-    <LinearLayout
-        android:background="#0084ff"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-
-        android:layout_width="304dp"
-        android:layout_marginTop="20dp"
-        android:layout_height="140dp">
 
     <TextView
 
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
@@ -164,37 +204,8 @@
         android:textSize="18sp"
         />
 
-    <LinearLayout android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/dashboardbtnid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="HOME"
-            android:textStyle="bold|italic"
-            android:textSize="16sp"
-            android:layout_marginLeft="14dp"
-            android:background="@drawable/buttonstyle"/>
-
-        <Button
-
-            android:id="@+id/bookapointmentID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BookAppointment"
-            android:textStyle="bold|italic"
-            android:layout_marginBottom="10dp"
-            android:textColor="#000"
-            android:textSize="16sp"
-     android:layout_marginLeft="20dp"
-            android:background="@drawable/buttonstyle"/>
 
 
-</LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
 
