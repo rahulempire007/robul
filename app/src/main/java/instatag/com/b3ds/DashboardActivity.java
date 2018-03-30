@@ -30,12 +30,12 @@ visitReportlayout.setOnClickListener(new View.OnClickListener() {
         profilelayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Intent intent=new Intent(DashboardActivity.this,SetupProfile.class);
-                intent.putExtra("firstname",bundle.getString("firstname"));
+            Intent intent=new Intent(DashboardActivity.this,ViewProfilePatient.class);
+               /* intent.putExtra("firstname",bundle.getString("firstname"));
                 intent.putExtra("userid",bundle.getString("userid"));
                 intent.putExtra("mobile",bundle.getString("mobile"));
                 intent.putExtra("lastname",bundle.getString("lastname"));
-                intent.putExtra("email",bundle.getString("email"));
+                intent.putExtra("email",bundle.getString("email"));*/
             startActivity(intent);
             }
         });
