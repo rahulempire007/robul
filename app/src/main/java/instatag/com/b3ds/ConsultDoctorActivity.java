@@ -31,13 +31,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
 public class ConsultDoctorActivity extends AppCompatActivity {
     RadioGroup plangroup;
     RadioButton free,paid;
+    String enteraddLabDoc,enterYouradd;
     EditText enteraddresslabname,enteryourAddress;
     TextView submit;
     private int specialist_doc_val;
@@ -45,7 +48,7 @@ public class ConsultDoctorActivity extends AppCompatActivity {
     private String specialityid;
     private ProgressBar pb;
     Button backtodashboardbtn,bookAppointmane;
-    ContactConsult searchresponse;
+    ContactListDoctor searchresponse;
 
     public  static  final MediaType JSON= MediaType.parse("application/json:charset=utf-8");
 
@@ -54,8 +57,8 @@ public class ConsultDoctorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consult_doctor);
-        backtodashboardbtn=(Button)findViewById(R.id.dashboardbtnid);
-        bookAppointmane=(Button)findViewById(R.id.bookapointmentID);
+       // backtodashboardbtn=(Button)findViewById(R.id.dashboardbtnid);
+        //bookAppointmane=(Button)findViewById(R.id.bookapointmentID);
         enteraddresslabname=(EditText)findViewById(R.id.searchdoctorID);
         enteryourAddress=(EditText)findViewById(R.id.searchaddressId);
         specialityspinner=(Spinner)findViewById(R.id.specialistID);
@@ -84,61 +87,105 @@ public class ConsultDoctorActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(validatelogin()) {
 
-                OkHttpClient client = new OkHttpClient();
-                Request validation_request=search_request();
-                client.newCall(validation_request).enqueue(new Callback() {
 
-                    @Override
-                    public void onFailure(Request request, IOException e) {
+                    OkHttpClient client = new OkHttpClient();
+                    Request validation_request = search_request();
+                    client.newCall(validation_request).enqueue(new Callback() {
 
-                        // Toast.makeText(getApplicationContext(),"Fail",Toast.LENGTH_LONG).show();
-                        Log.i("Activity", "onFailure: Fail");
-                    }
-                    @Override
-                    public void onResponse(final Response response) throws IOException {
-                        String body=response.body().string();
-                        Log.i(TAG, "onResponse: "+body);
-                        searchJSON(body);
-                        final String message = searchresponse.getMessage();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
+                        @Override
+                        public void onFailure(Request request, IOException e) {
+
+                            // Toast.makeText(getApplicationContext(),"Fail",Toast.LENGTH_LONG).show();
+                            Log.i("Activity", "onFailure: Fail");
+                        }
+
+                        @Override
+                        public void onResponse(final Response response) throws IOException {
+                            String body = response.body().string();
+                            Log.i(TAG, "onResponse: " + body);
+                            searchJSON(body);
+
+                            final String message = searchresponse.getMessage();
+                            final ArrayList<DoctorDatum> doctorData = searchresponse.getData();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
 //                                pb.setVisibility(View.GONE);
-                                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                                if (message.compareTo("success") == 0) {
-                                    Toast.makeText(getApplicationContext(), "search Successful", Toast.LENGTH_LONG).show();
-                                    //Intent intent2=new Intent(MainActivity.this,DashboardActivity.class);
-                                  Intent intent=new Intent(ConsultDoctorActivity.this,DisplayDoctorList.class);
-                                    intent.putExtra("data",(ArrayList)searchresponse.getData());
-                                    //intent.putExtra("lastname",loginResponse.getData().getLastName());
-                                    //intent.putExtra("email",loginResponse.getData().getEmail());
-                                    //intent.putExtra("userid",loginResponse.getData().getId());
-                                    //intent2.putExtras(intent);
-                                    startActivity(intent);
-                                } else if (message.compareTo("Invalid username or password") == 0) {
-                                    Toast.makeText(getApplicationContext(), "Invalid Email or Password", Toast.LENGTH_LONG).show();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Fail", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-                    }
-                });
+                                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                                    if (message.compareTo("success") == 0) {
+                                        Toast.makeText(getApplicationContext(), "search Successful", Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(getApplicationContext(), "search Successful", Toast.LENGTH_LONG).show();
+                                        Intent i = new Intent(ConsultDoctorActivity.this, CaseDetailActivity.class);
+                                        i.putExtra("doctordata", doctorData);
+                                        // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
+                                        startActivity(i);
+                                       // Intent i = new Intent(ConsultDoctorActivity.this, CaseDetailActivity.class);
+                                       // i.putExtra("doctordata", doctorData);
+                                        // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
+                                        //startActivity(i);
 
+
+                                        //Intent intent2=new Intent(MainActivity.this,DashboardActivity.class);
+                                        //  Intent intent=new Intent(ConsultDoctorActivity.this,DisplayDoctorList.class);
+                                        //  intent.putExtra("data",(ArrayList)searchresponse.getData());
+                                        //intent.putExtra("lastname",loginResponse.getData().getLastName());
+                                        //intent.putExtra("email",loginResponse.getData().getEmail());
+                                        //intent.putExtra("userid",loginResponse.getData().getId());
+                                        //intent2.putExtras(intent);
+                                        //startActivity(intent);
+                                    }  else {
+                                        Toast.makeText(getApplicationContext(), "No service found", Toast.LENGTH_LONG).show();
+
+
+                                    }
+                                }
+                            });
+                        }
+                    });
+//////////////////////////////----
+                }
             }
         });
 
 
     }
 
+    private boolean validatelogin(){
+        enteraddLabDoc=enteraddresslabname.getText().toString();
+        //Log.i("validate", "validatepassword: "+lusername);
+        enterYouradd=enteryourAddress.getText().toString();
+        //Log.i("validate", "validatepassword: "+lpassword);
+        if(enteraddLabDoc.compareTo("")==0)
+        {
+            Toast.makeText(getApplicationContext()," field empty",Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if (enterYouradd.compareTo("")==0)
+        {
+            Toast.makeText(getApplicationContext()," field empty",Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     private Request search_request(){
         JSONObject postdata = new JSONObject();
         try {
 
-           postdata.put("address",enteryourAddress.getText().toString());
+         /*  postdata.put("address",enteryourAddress.getText().toString());
             postdata.put("specialty_id",Integer.toString(specialist_doc_val));
             postdata.put("address",enteraddresslabname.getText().toString());
+*/
+
+           // postdata.put("specialty_id","3");
+            postdata.put("specialty_id",Integer.toString(specialist_doc_val));
+            postdata.put("search",enteraddresslabname.getText().toString());
+            postdata.put("address",enteryourAddress.getText().toString());
+
 
 
             //postdata.put("height",height.getText().toString());
@@ -158,7 +205,9 @@ public class ConsultDoctorActivity extends AppCompatActivity {
 
     public void searchJSON(String response) {
         Gson gson = new GsonBuilder().create();
-        searchresponse= gson.fromJson(response,ContactConsult.class);
+    searchresponse= gson.fromJson(response,ContactListDoctor.class);
+        //Data data= gson.fromJson(response,Data.class);
+       // data.getAddress();
 
     }
 }
