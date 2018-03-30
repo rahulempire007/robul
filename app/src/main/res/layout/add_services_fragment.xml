@@ -20,143 +20,222 @@
         tools:context="instatag.com.b3ds.ConsultDoctorActivity"
         android:background="@color/white">
 
-        <LinearLayout
-            android:background="#0084ff"
-            android:orientation="vertical"
-            android:layout_gravity="center"
 
-            android:layout_width="304dp"
-            android:layout_marginTop="30dp"
-            android:layout_height="250dp">
 
             <TextView
-
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:text="Area of Speciality:"
-                android:textColor="#fff"
                 android:textStyle="bold"
+                android:textColor="#000"
+                android:layout_marginLeft="25dp"
                 android:textSize="25sp"
-                android:layout_gravity="center"/>
+                />
 
-            <EditText
-                android:id="@+id/doctorfacilityNameID"
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
 
-android:gravity="center"
-                android:hint="Facility Name"/>
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Facility Name"
 
-            <Spinner
-                android:id="@+id/spinner"
+                        android:textColor="#f60d0909"
+                        android:textSize="15sp"
+                        />
 
-                android:layout_width="220dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:entries="@array/doctorspecialist"
-                android:background="@color/white"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="20dp" />
+                    <EditText
+                        android:id="@+id/doctorfacilityNameID"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Enter facility name"
 
-            <EditText
-                android:layout_marginTop="20dp"
-                android:textColorHint="#fff"
+                        android:textColor="#000"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/style1"
+                        android:padding="10dp"
+                        android:textSize="18sp"
+                        />
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:inputType="textMultiLine"
-               android:id="@+id/doctordescriptionID"
-android:gravity="center"
-                android:hint="Description"/>
-        </LinearLayout>
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:background="#0084ff"
-            android:layout_marginTop="15dp"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:layout_width="316dp"
-            android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Select Specialty"
+                        android:textColor="#f60d0909"
+                        android:textSize="15sp"
+                        />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="10dp"
+                        android:entries="@array/doctorspecialist"
+                        android:background="@drawable/style1"
+
+                        android:layout_marginTop="5dp" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Description"
+
+                        android:textColor="#f60d0909"
+                        android:textSize="15sp"
+                        />
+
+                    <EditText
+                        android:id="@+id/doctordescriptionID"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Enter description"
+
+                        android:textColor="#000"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/style1"
+                        android:padding="10dp"
+                        android:textSize="18sp"
+                        />
+
+
+            </LinearLayout>
+
             <TextView
-
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address:"
+                android:layout_marginTop="30dp"
+                android:text="Location:"
                 android:textStyle="bold"
-                android:textColor="#fff"
+                android:textColor="#000"
+                android:layout_marginLeft="25dp"
                 android:textSize="25sp"
-                android:layout_gravity="center"/>
-
+                />
             <EditText
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:id="@+id/fulladdressID"
-                android:gravity="center"
-                android:hint="Enter Your Address"/>
-            <EditText
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
+                android:layout_marginTop="25dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="50dp"
+                android:hint="Enter Your Address"
+
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
+
+
+
+            <EditText
                 android:id="@+id/placenameID"
-                android:gravity="center"
-                android:hint="Place Name"/>
-            <EditText
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="50dp"
+                android:hint="Place Name"
+
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
+            <EditText
                 android:id="@+id/localityID"
-                android:gravity="center"
-                android:hint="Enter Locality"/>
-            <EditText
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_height="50dp"
+                android:hint="Enter Locality"
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
+            <EditText
                 android:id="@+id/pincodeID"
-                android:gravity="center"
-                android:hint="Enter PIN code"/>
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter PIN code"
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
 
             <EditText
-                android:layout_marginTop="26dp"
-                android:textColorHint="#fff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:id="@+id/phonenumID"
-                android:gravity="center"
-                android:hint="Enter Phone Number"/>
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter Phone Number"
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
 
-        </LinearLayout>
-        <LinearLayout
-            android:background="#0084ff"
-            android:orientation="vertical"
-            android:layout_gravity="center"
 
-            android:layout_width="304dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="140dp">
+
+
+
+
+
 
             <TextView
 
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SAVE"
+                android:text="Add Service"
                 android:textStyle="bold"
                 android:id="@+id/saveservicebuttonid"
                 android:background="@drawable/buttonstyle"
@@ -165,36 +244,7 @@ android:gravity="center"
                 android:textSize="18sp"
                 />
 
-            <LinearLayout android:layout_marginTop="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/doctordashboardbtnId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="HOME"
-                    android:textStyle="bold|italic"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="14dp"
-                    android:background="@drawable/buttonstyle"/>
 
-                <Button
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="BACK"
-                    android:textStyle="bold|italic"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="#000"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="100dp"
-                    android:background="@drawable/buttonstyle"/>
-
-
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
 
