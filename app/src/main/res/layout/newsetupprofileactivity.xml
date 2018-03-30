@@ -5,181 +5,231 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#3b5998"
-
+        android:background="#fff"
         android:layout_height="match_parent">
 
 
-        <LinearLayout
-            android:layout_gravity="center"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Create Profile"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="25dp"
+            android:textSize="25sp"
+            />
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal">
-
-
-            <ImageView
-                android:id="@+id/imageViewforsetupprofile"
-                android:layout_width="160dp"
-                android:layout_height="130dp"
-                app:srcCompat="@drawable/logo"/>
-
-
-
+            app:cardElevation="16dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="20dp"
+            android:elevation="20dp">
             <LinearLayout
+
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="150dp"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
 
-                <Spinner
+                <ImageView
+                    android:id="@+id/uploadpImageID"
+                    android:layout_width="160dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/profileimagg"
+                    android:layout_gravity="center"/>
 
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:id="@+id/spinnerid1"
-                    android:background="@color/my_spinner_text_color"
-                    android:entries="@array/salutation"
-
-                    android:layout_marginTop="4dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <EditText
-                    android:id="@+id/setupfirstname"
-                    android:layout_width="166dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@drawable/style"
-                    android:hint="First Name"
-                    android:padding="15dp"
-                    android:textColorHint="@color/white"
-                    android:textSize="15sp" />
+                    android:orientation="vertical">
+
+                    <Spinner
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:id="@+id/spinnerid1"
+                        android:background="@color/my_spinner_text_color"
+                        android:entries="@array/salutation"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <EditText
+                        android:id="@+id/setupfirstname"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#000"
+                        android:background="@drawable/style1"
+                        android:text="Enter First Name"
+                        android:padding="15dp"
+
+                        android:textColorHint="#000"
+                        android:textSize="15sp" />
 
 
-                <EditText
-                    android:id="@+id/setuplastname"
-                    android:layout_width="166dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/style"
+                    <EditText
+                        android:id="@+id/setuplastname"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/style1"
 
-                    android:hint="Last Name"
-                    android:padding="15dp"
-                    android:textColorHint="@color/white"
-                    android:textSize="15sp" />
+                        android:text="Enter Last Name"
+                        android:padding="15dp"
+                        android:textColor="#000"
+                        android:textColorHint="#000"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        </LinearLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CONTACT INFORMATION:"
-            android:background="@drawable/buttonstyle"
-            android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="30dp"
+            android:text="Contact Details"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="25dp"
+            android:textSize="25sp"
+            />
+
+
 
         <LinearLayout
-           android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email:"
-                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:text="Email Address"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="saxena.rahul993@gmail.com"
                 android:id="@+id/setupemail"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:background="@drawable/style"
                 android:enabled="false"
-                android:hint="Your E-mail"
-                android:padding="15dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
+
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mobile:"
-                android:textColor="#fff"
-                android:textSize="15sp"
-                android:layout_gravity="center"/>
+                android:layout_marginLeft="10dp"
+                android:text="Mobile number"
 
-            <EditText
-                android:id="@+id/setupmobile"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="65dp"
-                android:background="@drawable/style"
+                android:textColor="#f60d0909"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="8660921683"
                 android:enabled="false"
-                android:hint="Your Mbbile Number"
-                android:padding="15dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:id="@+id/setupmobile"
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
+
+
+
+
 
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GENRAL INFORMATION:"
-android:background="@drawable/buttonstyle"
-            android:textSize="15sp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="30dp"
+            android:text="Genral Details"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="25dp"
+            android:textSize="25sp"
+            />
+
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender:"
-                android:textSize="15sp"
-                android:textColor="#fff"
-                android:layout_gravity="center"/>
+                android:layout_marginLeft="10dp"
+                android:text="Select Gender"
 
+                android:textColor="#f60d0909"
+                android:textSize="15sp"
+                />
             <RadioGroup
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:id="@+id/setupgender"
-                android:layout_width="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:background="@drawable/style1"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="70dp"
                 android:layout_height="wrap_content">
 
 
@@ -196,36 +246,39 @@ android:background="@drawable/buttonstyle"
                 <RadioButton
                     android:textSize="20sp"
                     android:id="@+id/radioFemale"
-
+android:layout_marginLeft="40dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/female" />
 
             </RadioGroup>
-
         </LinearLayout>
 
+
         <LinearLayout
-           android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Marital Status:"
-                android:textSize="15sp"
-                android:layout_gravity="center"/>
+                android:layout_marginLeft="10dp"
+                android:text="Marital Status"
 
+                android:textColor="#f60d0909"
+                android:textSize="15sp"
+                />
             <RadioGroup
                 android:orientation="horizontal"
                 android:id="@+id/setupmarital"
-                android:layout_width="wrap_content"
-
+                android:layout_width="match_parent"
+                android:layout_marginRight="70dp"
+                android:layout_marginLeft="10dp"
+android:background="@drawable/style1"
                 android:layout_height="wrap_content">
 
 
@@ -241,279 +294,358 @@ android:background="@drawable/buttonstyle"
 
                 <RadioButton
                     android:textSize="20sp"
-
+android:layout_marginLeft="30dp"
                     android:id="@+id/unmarriedid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/unmarried"/>
 
             </RadioGroup>
-
         </LinearLayout>
 
 
-
-
         <LinearLayout
-           android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Occupation:"
+                android:layout_marginLeft="10dp"
+                android:text="Select Occupation"
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <Spinner
-
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-
                 android:id="@+id/setupoccupation"
-                android:background="@color/white"
+
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
                 android:entries="@array/occupation"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:background="@drawable/style1"
+
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_gravity="center"
 
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ethnicity:"
+                android:layout_marginLeft="10dp"
+                android:text="Select Ethnicity"
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <Spinner
-
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@color/white"
                 android:id="@+id/setupethnicity"
 
+
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
                 android:entries="@array/ethnicity"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="45dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:background="@drawable/style1"
+
+                android:layout_marginTop="5dp" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_gravity="center"
-
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blood-Group:"
+                android:layout_marginLeft="10dp"
+                android:text="Your Blood-Group"
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
-            <Spinner
+                />
 
-                android:layout_width="150dp"
-                android:layout_height="30dp"
+            <Spinner
                 android:id="@+id/setupbloodgroup"
-                android:background="@color/white"
+
+
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
                 android:entries="@array/bloodgroupentry"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="6dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:background="@drawable/style1"
+
+                android:layout_marginTop="5dp" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Select Identity-type"
+                android:textColor="#f60d0909"
+                android:textSize="15sp"
+                />
 
             <Spinner
-
-                android:layout_width="150dp"
-                android:layout_height="30dp"
                 android:id="@+id/setupidentityproof"
-                android:background="@color/white"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
                 android:entries="@array/identity_proof_entries"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="4dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-            <EditText
-                android:id="@+id/identityno"
-                android:textColor="#fff"
+                android:background="@drawable/style1"
+
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Enter Identity Num"
+                android:layout_marginLeft="10dp"
+                android:text="Identity Number"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
+                />
+
+            <EditText
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_gravity="center"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="2424242"
+                android:id="@+id/identityno"
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_gravity="center"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:text="Personal Information"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="25dp"
+            android:textSize="25sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address:"
+                android:layout_marginLeft="10dp"
+                android:text="Location"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter your Address"
                 android:id="@+id/setupaddress"
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/style"
-
-                android:hint="Enter your Address "
-                android:padding="15dp"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
+
         <LinearLayout
-           android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Height(In Inches):"
+                android:layout_marginLeft="10dp"
+                android:text="Height(In Inches)"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Your Height"
                 android:id="@+id/setupheight"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/style"
-
-                android:hint="Height"
-                android:padding="15dp"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
+
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Weight(In Kg):"
+                android:layout_marginLeft="10dp"
+                android:text="Weight(In Kg)"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Your Weight"
                 android:id="@+id/setupweight"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/style"
-
-                android:hint="Weight"
-                android:padding="15dp"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="BMI:"
+
+                android:textColor="#f60d0909"
                 android:textSize="15sp"
-                android:layout_gravity="center"/>
+                />
 
             <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="BMI is"
                 android:id="@+id/setupbmi"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-
-                android:layout_marginLeft="75dp"
-                android:background="@drawable/style"
-
-                android:padding="15dp"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
+                android:textColor="#000"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/style1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp">
 
-            <Button
+
+
+
+        <Button
                 android:id="@+id/submitprofile"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:background="@drawable/buttonstyle"
 
-                android:layout_marginTop="1dp"
+                android:background="@drawable/buttonstyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="UPDATE Information"
                 android:textSize="15sp"
                 android:textAllCaps="false" />
-        </LinearLayout>
-    </LinearLayout>
+
+           </LinearLayout>
 
 
 </ScrollView>
