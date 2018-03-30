@@ -61,13 +61,20 @@ bundle=getIntent().getExtras();
         setupDoctorProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(DoctorDashboardActivity.this,SetupProfileForDoctor.class);
+                Intent intent=new Intent(DoctorDashboardActivity.this,ViewProfileDoctor.class);
                // intent.putExtra("mci_number",bundle.getString("mci_number"));
-                intent.putExtra("firstname",bundle.getString("firstname"));
+              /*  intent.putExtra("firstname",bundle.getString("firstname"));
+               // intent.putExtra("userid",bundle.getString("userid"));
                 intent.putExtra("userid",bundle.getString("userid"));
                 intent.putExtra("mobile",bundle.getString("mobile"));
                 intent.putExtra("lastname",bundle.getString("lastname"));
                 intent.putExtra("email",bundle.getString("email"));
+                intent.putExtra("consultationtime",bundle.getString("consultationtime"));
+                intent.putExtra("qualification",bundle.getString("qualification"));
+                intent.putExtra("identitytype",bundle.getString("identitytype"));
+                intent.putExtra("identityid",bundle.getString("identityid"));*/
+                //intent.putExtra("instatag/com/b3ds/ChoiceActivity.java",bundle.getString("identityid"));*/
+
                 startActivity(intent);
             }
         });
