@@ -1,6 +1,8 @@
 package instatag.com.b3ds;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -19,48 +23,79 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
+import com.squareup.okhttp.ResponseBody;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 
+import okhttp3.MultipartBody;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+
+import static android.R.attr.data;
+
 public class SetupProfileForDoctor extends AppCompatActivity {
-    private EditText identityno, firstname,lastname,email,mobile,qualification,consultationTime;
+
+
+    public static final int PICK_IMAGE = 100;
+
+
+
+    private EditText identityno,qualification,consultationTime, firstname,lastname;
+    TextView email,mobile;
     private Spinner identitytype;
     private int identitytype_val;
     Bundle bundle;
+    ImageView uploadImage;
     Button updateProfilebtn;
     public  static  final MediaType JSON= MediaType.parse("application/json:charset=utf-8");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctor_setup_profile_activity);
-        firstname=(EditText)findViewById(R.id.setupfirstname);
-        lastname=(EditText)findViewById(R.id.setuplastname);
-        email=(EditText)findViewById(R.id.setupemail);
-        mobile=(EditText)findViewById(R.id.setupmobile);
-        qualification=(EditText)findViewById(R.id.enterqualificationID);
-        consultationTime=(EditText)findViewById(R.id.consultationtimeID);
-        updateProfilebtn=(Button)findViewById(R.id.submitprofileDoctorID);
-        identityno=(EditText)findViewById(R.id.enteridenetitynumID);
+        firstname = (EditText) findViewById(R.id.setupfirstNameid);
+        lastname = (EditText) findViewById(R.id.setuplastnameID);
+        email = (TextView) findViewById(R.id.setupemailID);
+        mobile = (TextView) findViewById(R.id.setupmobileID);
+        uploadImage = (ImageView) findViewById(R.id.btn_upload);
+        identitytype = (Spinner) findViewById(R.id.setupidentityproof);
 
-        bundle= getIntent().getExtras();
+        qualification = (EditText) findViewById(R.id.enterqualificationID);
+        consultationTime = (EditText) findViewById(R.id.consultationtimeID);
+        updateProfilebtn = (Button) findViewById(R.id.submitprofileDoctorID);
+        identityno = (EditText) findViewById(R.id.enteridenetitynumID);
+        bundle = getIntent().getExtras();
 
         firstname.setText(bundle.getString("firstname"));
-
         lastname.setText(bundle.getString("lastname"));
-
         email.setText(bundle.getString("email"));
-
         mobile.setText(bundle.getString("mobile"));
+        identityno.setText(bundle.getString("identityid"));
+        consultationTime.setText(bundle.getString("consultationtime"));
+        qualification.setText(bundle.getString("qualification"));
+        identitytype.setTag(bundle.get("identity_type"));
 
-        identitytype=(Spinner)findViewById(R.id.setupidentityproof);
+        //intent.putExtra("identitytype",bundle.getString("identitytype"));
 
-        identitytype.setOnItemSelectedListener(
+
+        //tyring to upload image-----------------------------------------------------
+
+
+
+
+
+
+
+
+                identitytype.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
                         identitytype_val=pos+1;
+                        identitytype.setPrompt("Select one");
                         //Log.i(TAG, "onItemSelected: "+pos);
                         //Log.i(TAG, "onItemSelected: "+id);
 
@@ -99,9 +134,16 @@ public class SetupProfileForDoctor extends AppCompatActivity {
 
 
                                     Intent intent=new Intent(SetupProfileForDoctor.this,ViewProfileDoctor.class);
-                                    intent.putExtra("firstname",bundle.getString("firstname"));
-                                   // intent.putExtra("userid",userid);
-                                    startActivity(intent);
+                                    /*intent.putExtra("firstname",bundle.getString("firstname"));
+                                    intent.putExtra("lastname",bundle.getString("lastname"));
+                                    intent.putExtra("email",bundle.getString("email"));
+                                    intent.putExtra("mobile",bundle.getString("mobile"));
+                                    intent.putExtra("qualification",bundle.getString("qualification"));
+                                    intent.putExtra("consultation_time",bundle.getString("consultation_time"));
+                                    intent.putExtra("identity_type",bundle.getString("identity_type"));
+                                    intent.putExtra("identity_id",bundle.getString("identity_id"));
+                                  intent.putExtra("userid",userid);*/
+                                   startActivity(intent);finish();
                                 }
                                 else{
                                     Toast.makeText(getApplicationContext(),"OOPS!!",Toast.LENGTH_LONG).show();
@@ -122,15 +164,15 @@ public class SetupProfileForDoctor extends AppCompatActivity {
     private Request profile_request(){
         JSONObject postdata = new JSONObject();
         try {
-            postdata.put("id",MainActivity.userid);
+            postdata.put("user_id",MainActivity.userid);
 
             //postdata.put("bmi",bmi.getText().toString());
 
-            postdata.put("first_name",firstname.getText().toString());
+           postdata.put("first_name",firstname.getText().toString());
             postdata.put("last_name",lastname.getText().toString());
             postdata.put("email",email.getText().toString());
             postdata.put("mobile",mobile.getText().toString());
-            postdata.put("qualification",qualification.getText().toString());
+           postdata.put("qualification",qualification.getText().toString());
             postdata.put("consultation_time",consultationTime.getText().toString());
 
             postdata.put("identity_type",Integer.toString(identitytype_val));
