@@ -12,9 +12,10 @@
         android:layout_marginLeft="7dp"
         android:layout_marginRight="7dp"
         app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
+        app:cardElevation="15dp"
+
         android:layout_marginTop="10dp"
-        app:cardBackgroundColor="@color/bluelight"
+        app:cardBackgroundColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 <LinearLayout
@@ -24,31 +25,59 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Doctor Name"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textSize="20sp"
         android:id="@+id/docNameid" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mobile no:"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"
-        android:id="@+id/mobNumid" />
 
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/mobNumid" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:id="@+id/useridgone"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Address"
+
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#fff"
-        android:layout_marginTop="5dp"
-        android:id="@+id/addresssid" />
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:id="@+id/addressid" />
+
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Appointment"
+        android:textColor="#000"
+        android:background="@drawable/style1"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+       />
+
 </LinearLayout>
 
 
