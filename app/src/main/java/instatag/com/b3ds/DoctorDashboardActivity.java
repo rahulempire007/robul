@@ -32,7 +32,9 @@ public class DoctorDashboardActivity extends AppCompatActivity {
         patientLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(DoctorDashboardActivity.this,"Purchase plan to use this facility",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(DoctorDashboardActivity.this,"Purchase plan to use this facility",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(DoctorDashboardActivity.this,PatientMessageActivity.class);
+                startActivity(intent);
             }
         });
         createplanLayout.setOnClickListener(new View.OnClickListener() {
