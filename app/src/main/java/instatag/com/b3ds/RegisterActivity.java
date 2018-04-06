@@ -139,6 +139,7 @@ public class RegisterActivity extends AppCompatActivity {
             postdata.put("first_name",mfirst_name);
             postdata.put("last_name",mlast_name);
             postdata.put("email",memail);
+            postdata.put("user_type",4);
             postdata.put("mobile",mphone);
         } catch(JSONException e){
             e.printStackTrace();
