@@ -32,6 +32,7 @@ ListView listView;
                 Intent intent=new Intent(CaseDetailActivity.this,CommunicatetoDoc.class);
                 intent.putExtra("userData",ls.get(position));
                 startActivity(intent);
+                finish();
             }
         });
         listView.setAdapter(adapter);
