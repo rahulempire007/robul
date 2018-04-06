@@ -27,6 +27,7 @@ public class CommunicatetoDoc extends AppCompatActivity {
     ServiceData serviceData;
     DoctorService doctorService;
     DoctorDatum doctorData;
+    Datum_FetchingMsg datum_fetchingMsg;
     ContactServiceforMsg contactServiceforMsg;
 
     @Override
@@ -64,7 +65,7 @@ public class CommunicatetoDoc extends AppCompatActivity {
                     @Override
                     public void onFailure(Request request, IOException e) {
 
-                        // Toast.makeText(getApplicationContext(),"Fail",Toast.LENGTH_LONG).show();
+
                         Log.i("Activity", "onFailure: Fail");
                     }
 
@@ -104,13 +105,11 @@ public class CommunicatetoDoc extends AppCompatActivity {
     private Request login_request() {
         JSONObject postdata = new JSONObject();
         try {
-            postdata.put("patient_id", MainActivity.userid);
-            postdata.put("subject", enterSub_et.getText().toString());
-            postdata.put("message", enterMsg_et.getText().toString());
+            postdata.put("user_id", MainActivity.userid);
+            postdata.put("subject", enterSub_et.getText().toString().trim());
+            postdata.put("message", enterMsg_et.getText().toString().trim());
             postdata.put("reciever_user_id", doctorData.getService().getUserId());
 
-
-            //postdata.put("password",lpassword);
         } catch (JSONException e) {
             e.printStackTrace();
         }
