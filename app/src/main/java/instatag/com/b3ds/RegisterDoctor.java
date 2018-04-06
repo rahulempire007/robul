@@ -142,6 +142,7 @@ public class RegisterDoctor extends AppCompatActivity {
             postdata.put("last_name",mlast_name);
             postdata.put("mci_number",mmcinumber);
             postdata.put("email",memail);
+            postdata.put("user_type",2);
             postdata.put("mobile",mphone);
         } catch(JSONException e){
             e.printStackTrace();
