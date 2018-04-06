@@ -65,7 +65,13 @@ public class ViewProfilePatient extends AppCompatActivity {
                 intent.putExtra("lastname",last_name_tv.getText().toString());
                 intent.putExtra("email",email_tv.getText().toString());
                 intent.putExtra("mobile",mobile_tv.getText().toString());
-                intent.putExtra("address",address_tv.getText().toString());
+               // intent.putExtra("address",address_tv.getText().toString());
+                if(address_tv.getText()==null)
+                    intent.putExtra("i",true);
+                else
+                    intent.putExtra("address",address_tv.getText().toString());
+
+
                /* intent.putExtra("consultationtime",consultation_time_tv.getText().toString());
                 intent.putExtra("qualification",qualification_tv.getText().toString());
                 intent.putExtra("identityid",identity_val_tv.getText().toString());
@@ -102,8 +108,13 @@ public class ViewProfilePatient extends AppCompatActivity {
                             last_name_tv.setText(contactService_getDetails.getData().getLastName());
                             email_tv.setText(contactService_getDetails.getData().getEmail());
                             mobile_tv.setText(contactService_getDetails.getData().getMobile());
-                            address_tv.setText(contactService_getDetails.getData().getAddress().toString());
-                         //   registeredOn_Date.setText(contactService_getDetails.getData().);
+
+                         //   address_tv.setText(contactService_getDetails.getData().getAddress().toString());
+                            if(contactService_getDetails.getData().getAddress()!=null)
+                                address_tv.setText(contactService_getDetails.getData().getAddress().toString());
+
+
+                            //   registeredOn_Date.setText(contactService_getDetails.getData().);
                            // qualification_tv.setText(contactService_getDetails.getData().getQualification());
                             //consultation_time_tv.setText(contactService_getDetails.getData().getConsultationTime());
                             //identity_val_tv.setText(contactService_getDetails.getData().getIdentityId());

@@ -75,10 +75,24 @@ public class SetupProfileForDoctor extends AppCompatActivity {
         email.setText(bundle.getString("email"));
         mobile.setText(bundle.getString("mobile"));
         identityno.setText(bundle.getString("identityid"));
-        consultationTime.setText(bundle.getString("consultationtime"));
-        qualification.setText(bundle.getString("qualification"));
-        identitytype.setTag(bundle.get("identity_type"));
 
+        //consultationTime.setText(bundle.getString("consultationtime"));
+        //qualification.setText(bundle.getString("qualification"));
+       // identitytype.setTag(bundle.get("identity_type"));
+
+
+        if(bundle.getBoolean("i"))
+        {
+            consultationTime.setText("");
+            qualification.setText("");
+            identitytype.setTag("");
+
+        }
+        else {
+            consultationTime.setText(bundle.getString("consultationtime"));
+            qualification.setText(bundle.getString("qualification"));
+            identitytype.setTag(bundle.get("identity_type"));
+        }
         //intent.putExtra("identitytype",bundle.getString("identitytype"));
 
 

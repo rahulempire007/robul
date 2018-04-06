@@ -11,10 +11,14 @@
 
 
 
+
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Search Doctor"
         android:textStyle="bold"
         android:textColor="#000"
@@ -43,7 +47,7 @@
         <EditText
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:hint="Doctor"
             android:id="@+id/searchdoctorID"
 
@@ -79,7 +83,7 @@
         <EditText
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:hint="city name"
             android:id="@+id/searchaddressId"
 
@@ -178,7 +182,7 @@ android:layout_marginLeft="40dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:padding="10dp"
             android:entries="@array/doctorspecialist"
             android:background="@drawable/style1"

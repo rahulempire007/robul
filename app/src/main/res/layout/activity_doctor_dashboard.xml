@@ -252,7 +252,7 @@
                     android:textColor="#000"
                     android:layout_marginTop="10dp"
 
-                    android:text="Patients"/>
+                    android:text="Patients message"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"

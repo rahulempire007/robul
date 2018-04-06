@@ -69,8 +69,18 @@ editButton.setOnClickListener(new View.OnClickListener() {
         intent.putExtra("lastname",last_name_tv.getText().toString());
         intent.putExtra("email",email_tv.getText().toString());
         intent.putExtra("mobile",mobile_tv.getText().toString());
-        intent.putExtra("consultationtime",consultation_time_tv.getText().toString());
-        intent.putExtra("qualification",qualification_tv.getText().toString());
+
+       // intent.putExtra("consultationtime",consultation_time_tv.getText().toString());
+        //intent.putExtra("qualification",qualification_tv.getText().toString());
+
+        if(consultation_time_tv.getText()!=null) {
+            intent.putExtra("consultationtime", consultation_time_tv.getText().toString());
+            intent.putExtra("qualification", qualification_tv.getText().toString());
+        }
+        else
+            intent.putExtra("i",true);
+
+
        // intent.putExtra("identityid",identity_val_tv.getText().toString());
         //intent.putExtra("identity_type",identity_type_tv.getText().toString());
         startActivity(intent);
@@ -104,8 +114,17 @@ editButton.setOnClickListener(new View.OnClickListener() {
                             last_name_tv.setText(contactService_getDetails.getData().getLastName());
                             email_tv.setText(contactService_getDetails.getData().getEmail());
                             mobile_tv.setText(contactService_getDetails.getData().getMobile());
-                            qualification_tv.setText(contactService_getDetails.getData().getQualification());
-                            consultation_time_tv.setText(contactService_getDetails.getData().getConsultationTime());
+
+                           // qualification_tv.setText(contactService_getDetails.getData().getQualification());
+                            //consultation_time_tv.setText(contactService_getDetails.getData().getConsultationTime());
+
+                            if(contactService_getDetails.getData().getQualification()!=null)
+                                qualification_tv.setText(contactService_getDetails.getData().getQualification());
+                            if(contactService_getDetails.getData().getConsultationTime()!=null)
+                                consultation_time_tv.setText(contactService_getDetails.getData().getConsultationTime());
+
+
+
                             //identity_val_tv.setText(contactService_getDetails.getData().getIdentityId());
                             //identity_type_tv.setText(contactService_getDetails.getData().getIdentityType());
                            // Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();

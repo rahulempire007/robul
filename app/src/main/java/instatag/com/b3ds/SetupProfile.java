@@ -70,12 +70,11 @@ public class SetupProfile extends Activity {
         setContentView(R.layout.newsetupprofileactivity);
         Bundle bundle = getIntent().getExtras();
 
-        //imageView = (ImageView)findViewById(R.id.imageviewforsetupProfile);
         firstname=(EditText)findViewById(R.id.setupfirstname);
         lastname=(EditText)findViewById(R.id.setuplastname);
         email=(EditText)findViewById(R.id.setupemail);
         mobile=(TextView) findViewById(R.id.setupmobile);
-        //imageView=(ImageView)findViewById(R.id.img);
+
         imageUpload=(ImageView)findViewById(R.id.uploadpImageID);
         submit=(Button)findViewById(R.id.submitprofile);
         address =(EditText)findViewById(R.id.setupaddress);
@@ -92,11 +91,6 @@ public class SetupProfile extends Activity {
 
         occupation=(Spinner)findViewById(R.id.setupoccupation);
 
-
-
-
-
-
         occupation.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -110,7 +104,6 @@ public class SetupProfile extends Activity {
                         occupation_val=1;
                     }
                 });
-
 
         bloodgroup=(Spinner)findViewById(R.id.setupbloodgroup);
 
@@ -128,10 +121,7 @@ public class SetupProfile extends Activity {
                     }
                 });
 
-
-
         ethinicity=(Spinner)findViewById(R.id.setupoccupation);
-
         ethinicity.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -144,11 +134,11 @@ public class SetupProfile extends Activity {
                     public void onNothingSelected(AdapterView<?> parent) {
                         ethinicity_val=1;
                     }
+
                 });
 
 
         identitytype=(Spinner)findViewById(R.id.setupoccupation);
-
         identitytype.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
@@ -163,15 +153,22 @@ public class SetupProfile extends Activity {
                     }
                 });
 
+        imageUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         firstname.setText(bundle.getString("firstname"));
-
         lastname.setText(bundle.getString("lastname"));
-
         email.setText(bundle.getString("email"));
-
         mobile.setText(bundle.getString("mobile"));
 
-        address.setText(bundle.getString("address"));
+       // address.setText(bundle.getString("address"));
+        if(bundle.getBoolean("i"))
+            address.setText("");
+        else
+            address.setText(bundle.getString("address"));
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,8 +191,6 @@ public class SetupProfile extends Activity {
                 {
                     marrital=2;
                 }
-
-
 
                 OkHttpClient client = new OkHttpClient();
                 Request validation_request=profile_request();
@@ -233,31 +228,18 @@ public class SetupProfile extends Activity {
                         });
                     }
                 });
-
-
-
-
             }
         });
-
-
     }
-
-
-
-
-
-
-
     private Request profile_request(){
         JSONObject postdata = new JSONObject();
+
         try {
             postdata.put("user_id",MainActivity.userid);
             postdata.put("weight",weight.getText().toString());
             postdata.put("height",height.getText().toString());
             postdata.put("gender",Integer.toString(gender));
             postdata.put("marital_status",Integer.toString(marrital));
-            //postdata.put("bmi",bmi.getText().toString());
             postdata.put("address",address.getText().toString());
             postdata.put("first_name",firstname.getText().toString());
             postdata.put("last_name",lastname.getText().toString());
@@ -282,7 +264,6 @@ public class SetupProfile extends Activity {
                 .build();
         return request;
     }
-
     public boolean profileresponse(String response) {
         Gson gson = new GsonBuilder().create();
         ContactService profileResponse = gson.fromJson(response,ContactService.class);

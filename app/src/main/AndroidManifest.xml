@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -48,7 +47,9 @@
         <activity android:name=".ViewProfileDoctor" />
         <activity android:name=".DisplayDoctorList" />
         <activity android:name=".CaseDetailActivity" />
-        <activity android:name=".ViewProfilePatient"></activity>
+        <activity android:name=".ViewProfilePatient" />
+        <activity android:name=".CommunicatetoDoc" />
+        <activity android:name=".PatientMessageActivity"></activity>
     </application>
 
 </manifest>
