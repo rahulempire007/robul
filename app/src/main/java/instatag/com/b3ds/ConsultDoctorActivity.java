@@ -53,6 +53,8 @@ public class ConsultDoctorActivity extends AppCompatActivity {
     public  static  final MediaType JSON= MediaType.parse("application/json:charset=utf-8");
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +123,7 @@ public class ConsultDoctorActivity extends AppCompatActivity {
                                         i.putExtra("doctordata", doctorData);
                                         // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
                                         startActivity(i);
+                                        finish();
                                        // Intent i = new Intent(ConsultDoctorActivity.this, CaseDetailActivity.class);
                                        // i.putExtra("doctordata", doctorData);
                                         // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
