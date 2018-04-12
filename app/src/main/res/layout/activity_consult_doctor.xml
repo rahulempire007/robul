@@ -133,7 +133,7 @@
             android:id="@+id/genderID"
             android:layout_width="match_parent"
             android:layout_marginRight="70dp"
-            android:background="@drawable/style1"
+
             android:layout_height="wrap_content">
 
 

@@ -106,6 +106,7 @@ public class CommunicatetoDoc extends AppCompatActivity {
         JSONObject postdata = new JSONObject();
         try {
             postdata.put("user_id", MainActivity.userid);
+
             postdata.put("subject", enterSub_et.getText().toString().trim());
             postdata.put("message", enterMsg_et.getText().toString().trim());
             postdata.put("reciever_user_id", doctorData.getService().getUserId());

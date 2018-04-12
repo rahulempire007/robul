@@ -71,6 +71,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp">
             <LinearLayout
+                android:id="@+id/patient_history_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -88,7 +89,7 @@
                     android:textColor="#000"
 
                     android:layout_marginTop="10dp"
-                    android:text="PURCHASE PLAN"/>
+                    android:text="PATIENT HISTORY"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -165,6 +166,7 @@
             android:layout_height="190dp"
             android:layout_margin="10dp">
             <LinearLayout
+                android:id="@+id/patienthistoryID"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -180,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="PATIENT HISTORY"
+                    android:text="MESSAGES"
                     android:textStyle="bold|italic"
                     android:textColor="#000"/>
                 <View

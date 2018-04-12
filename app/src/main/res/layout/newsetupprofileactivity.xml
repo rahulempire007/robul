@@ -74,6 +74,7 @@
                         android:layout_width="166dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
                         android:layout_marginTop="4dp"
                         android:textColor="#000"
                         android:background="@drawable/style1"
@@ -95,6 +96,7 @@
                         android:text="Enter Last Name"
                         android:padding="15dp"
                         android:textColor="#000"
+                        android:layout_marginRight="5dp"
                         android:textColorHint="#000"
                         android:textSize="15sp" />
 
@@ -140,7 +142,7 @@
             <EditText
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:text="saxena.rahul993@gmail.com"
                 android:id="@+id/setupemail"
                 android:enabled="false"
@@ -176,7 +178,7 @@
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:text="8660921683"
                 android:enabled="false"
                 android:id="@+id/setupmobile"

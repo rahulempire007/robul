@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature
         android:name="android.hardware.telephony"
@@ -49,7 +50,21 @@
         <activity android:name=".CaseDetailActivity" />
         <activity android:name=".ViewProfilePatient" />
         <activity android:name=".CommunicatetoDoc" />
-        <activity android:name=".PatientMessageActivity"></activity>
+        <activity android:name=".PatientMessageActivity" />
+        <activity android:name=".FetchingMsgFromDoctor_to_Pat" />
+        <activity android:name=".Upload_Family_history_Activity" />
+        <activity android:name=".Navigation"></activity>
+      <!--  <activity
+
+            android:name=".Navigation"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> -->
     </application>
 
 </manifest>

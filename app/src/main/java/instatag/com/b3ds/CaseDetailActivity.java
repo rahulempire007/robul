@@ -16,7 +16,7 @@ public class CaseDetailActivity extends AppCompatActivity {
 ListView listView;
     Adapter adapter;
     TextView bookappointmentTv;
-    ArrayList<DoctorDatum> ls;
+    List<DoctorDatum> ls;
 
 
     @Override
@@ -25,15 +25,15 @@ ListView listView;
         setContentView(R.layout.activity_case_detail);
         listView=(ListView)findViewById(R.id.showingDoctorResult);
         //bookappointmentTv=(TextView)findViewById(R.id.bookappointmentID);
-        ls=(ArrayList<DoctorDatum>) getIntent().getSerializableExtra("doctordata");
+        ls=(List<DoctorDatum>) getIntent().getSerializableExtra("doctordata");
         adapter=new Adapter(getApplicationContext(), ls, new Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent=new Intent(CaseDetailActivity.this,CommunicatetoDoc.class);
                 intent.putExtra("userData",ls.get(position));
+
                 startActivity(intent);
-                finish();
-            }
+                           }
         });
         listView.setAdapter(adapter);
 

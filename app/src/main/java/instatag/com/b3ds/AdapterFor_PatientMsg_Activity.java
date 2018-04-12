@@ -47,6 +47,7 @@ public class AdapterFor_PatientMsg_Activity extends BaseAdapter {
     Button replyBtn;
     TextView sub, msg, patient_name, msgDate;
     PatientMessageActivity context;
+
     Adapter.OnItemClickListener onItemClickListener;
 //    Datum_FetchingMsg doctoritem;
 
@@ -62,6 +63,8 @@ public class AdapterFor_PatientMsg_Activity extends BaseAdapter {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
+
+    //make adapterconstructor for fetchingMsgFromDctortopat
 
     @Override
     public int getCount() {
@@ -89,8 +92,9 @@ public class AdapterFor_PatientMsg_Activity extends BaseAdapter {
 //        Datum_FetchingMsg doctoritem=data.get(i);
         sub.setText(data.get(position).getCommunication().getSubject());
         msg.setText(data.get(position).getCommunication().getMessage());
-        patient_name.setText(data.get(position).getCommunication().getUserId());
+        patient_name.setText(data.get(position).getUser().getFirstName()+" "+data.get(position).getUser().getLastName());
         msgDate.setText(data.get(position).getCommunication().getCreated());
+
         return view;
 
 
@@ -145,8 +149,8 @@ public class AdapterFor_PatientMsg_Activity extends BaseAdapter {
 
                 final EditText edt = (EditText) dialogView.findViewById(R.id.edit1);
 
-                dialogBuilder.setTitle("Custom dialog");
-                dialogBuilder.setMessage("Enter text below");
+                dialogBuilder.setTitle("Reply here");
+                dialogBuilder.setMessage("");
                 dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //do something with edt.getText().toString();

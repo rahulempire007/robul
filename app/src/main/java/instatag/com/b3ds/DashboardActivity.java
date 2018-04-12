@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class DashboardActivity extends AppCompatActivity {
-    LinearLayout profilelayout,visitReportlayout;
+    LinearLayout profilelayout,visitReportlayout,checkMsg_Layout,patient_history_layout;
     Bundle bundle;
     TextView consultdoctorTV;
     @Override
@@ -18,6 +18,24 @@ public class DashboardActivity extends AppCompatActivity {
         bundle= getIntent().getExtras();
         consultdoctorTV=(TextView)findViewById(R.id.consultdoctorid);
         visitReportlayout=(LinearLayout)findViewById(R.id.visitreportlayoutId);
+        checkMsg_Layout=(LinearLayout)findViewById(R.id.patienthistoryID);
+        checkMsg_Layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(DashboardActivity.this,FetchingMsgFromDoctor_to_Pat.class);
+                startActivity(intent);
+            }
+        });
+patient_history_layout=(LinearLayout)findViewById(R.id.patient_history_layout);
+        patient_history_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(DashboardActivity.this,Upload_Family_history_Activity.class);
+                startActivity(intent);
+            }
+        });
+
 
         profilelayout=(LinearLayout)findViewById(R.id.dashboardprofile);
 visitReportlayout.setOnClickListener(new View.OnClickListener() {

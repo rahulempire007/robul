@@ -60,7 +60,9 @@ public class Adapter extends BaseAdapter {
         TextView docID=view.findViewById(R.id.useridgone);
 
         DoctorDatum doctoritem=data.get(position);
-        name.setText(doctoritem.getService().getTitle());
+       // name.setText(doctoritem.getService().getTitle());
+        name.setText(doctoritem.getUser().getFirstName());
+        //name.setText(doctoritem.getService().getTitle());
         address.setText(doctoritem.getService().getAddress());
         phone.setText(doctoritem.getService().getPhone());
         docID.setText(doctoritem.getService().getUserId());

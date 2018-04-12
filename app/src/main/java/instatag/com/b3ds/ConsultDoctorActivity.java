@@ -119,11 +119,13 @@ public class ConsultDoctorActivity extends AppCompatActivity {
                                     if (message.compareTo("success") == 0) {
                                         Toast.makeText(getApplicationContext(), "search Successful", Toast.LENGTH_LONG).show();
                                         //Toast.makeText(getApplicationContext(), "search Successful", Toast.LENGTH_LONG).show();
+                                       // Bundle b=new Bundle();
+                                       // b.putSerializable("doctordata", (Serializable) doctorData);
                                         Intent i = new Intent(ConsultDoctorActivity.this, CaseDetailActivity.class);
-                                        i.putExtra("doctordata", doctorData);
+                                        i.putExtra("doctordata",doctorData);
                                         // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
                                         startActivity(i);
-                                        finish();
+
                                        // Intent i = new Intent(ConsultDoctorActivity.this, CaseDetailActivity.class);
                                        // i.putExtra("doctordata", doctorData);
                                         // i.putExtra("data",(Serializable)openList.get(getAdapterPosition()));
@@ -185,6 +187,7 @@ public class ConsultDoctorActivity extends AppCompatActivity {
 */
 
            // postdata.put("specialty_id","3");
+          //  postdata.put("user_id",MainActivity.userid);
             postdata.put("specialty_id",Integer.toString(specialist_doc_val));
             postdata.put("search",enteraddresslabname.getText().toString());
             postdata.put("address",enteryourAddress.getText().toString());

@@ -37,14 +37,14 @@
             <Button
                 android:layout_margin="6dp"
                 android:background="@drawable/buttonstylepink"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Learn More"
                 />
             <Button
                 android:layout_margin="6dp"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:background="@drawable/buttonstylepink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

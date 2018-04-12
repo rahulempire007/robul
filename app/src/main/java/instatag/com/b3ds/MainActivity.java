@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     String lusername,lpassword;
     private ProgressBar pb;
     protected static String userid;
+    protected static String full_name;
     protected static String user_type;
 
     public static final MediaType JSON
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,VerifyRegEmail.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -151,14 +153,21 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
                                         userid=loginResponse.getData().getId();
                                         user_type=loginResponse.getData().getUserType();
+                                        full_name=loginResponse.getData().getFullName();
+
 
 
                                         //Intent intent2=new Intent(MainActivity.this,DashboardActivity.class);
 
                                         if((loginResponse.getData().getUserType()).compareTo("4")==0) {
 
-                                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                                           // intent.putExtra("firstname", loginResponse.getData().getFirstName());
+
+                                            //i am now change this layout to Navigation drawer below
+                                           // Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                                            Intent intent = new Intent(MainActivity.this, Navigation.class);
+
+
+                                            // intent.putExtra("firstname", loginResponse.getData().getFirstName());
                                             //intent.putExtra("mobile", loginResponse.getData().getMobile());
                                             //intent.putExtra("lastname", loginResponse.getData().getLastName());
                                             //intent.putExtra("email", loginResponse.getData().getEmail());
@@ -169,9 +178,16 @@ public class MainActivity extends AppCompatActivity {
                                             //intent.putExtra("userid", loginResponse.getData().getId());
                                             //intent2.putExtras(intent);
                                             startActivity(intent);
+                                            finish();
                                         }
                                         else{
+
+                                            //i am now change this layout to Navigation drawer below
+                                           // Intent intent = new Intent(MainActivity.this, DoctorDashboardActivity.class);
                                             Intent intent = new Intent(MainActivity.this, DoctorDashboardActivity.class);
+
+
+
                                             //intent.putExtra("mci_number", loginResponse.getData().getMciNumber().toString());
                                            // intent.putExtra("firstname", loginResponse.getData().getFirstName());
                                             //intent.putExtra("mobile", loginResponse.getData().getMobile());
@@ -186,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
 
                                             //intent2.putExtras(intent);
                                             startActivity(intent);
+                                            finish();
 
                                         }
                                     } else if (message.compareTo("Invalid username or password") == 0) {

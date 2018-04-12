@@ -54,9 +54,9 @@ public class AddServices extends Fragment {
     private EditText facilityname, description, address, placename, locality, pincode, phone;
     TextView save;
     private  int choosespecialist_val;
-    private Button submit;
+   // private Button submit;
     private Spinner chooseSpecialist;
-    private String specialitypos;
+   // private String specialitypos;
     ArrayList<StateVO> listVOs = new ArrayList<>();
     public static final MediaType JSON = MediaType.parse("application/json:charset=utf-8");
 
@@ -74,7 +74,7 @@ public class AddServices extends Fragment {
         description = (EditText) PageOne.findViewById(R.id.doctordescriptionID);
         address = (EditText)PageOne.findViewById(R.id.fulladdressID);
         placename = (EditText) PageOne.findViewById(R.id.placenameID);
-        submit = (Button) PageOne.findViewById(R.id.submitprofile);
+        //submit = (Button) PageOne.findViewById(R.id.submitprofile);
         locality = (EditText) PageOne.findViewById(R.id.localityID);
         pincode = (EditText) PageOne.findViewById(R.id.pincodeID);
         phone = (EditText) PageOne.findViewById(R.id.phonenumID);
