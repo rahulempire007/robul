@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,11 +10,11 @@
 
     <LinearLayout
         android:id="@+id/layout"
-        android:layout_width="368dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="35dp"
-        android:background="@color/colorPrimaryDark"
+        android:padding="38dp"
+        android:background="@drawable/navimage"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp">
         <TextView
@@ -22,17 +22,22 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:textColor="#fff"
-            android:text="Welcome to B3S "/>
+            android:textStyle="bold"
+            android:text="Welcome to B3 "/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:textSize="15sp"
-            android:text="Bussiness Info solution company that provide one to one Doctor-patient help with  Effective homeopathic and Ayurvedic medications for treating lung carcinoma It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout structure."
-            android:layout_marginTop="15dp"/>
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+
+
+            android:text="Digital Info solution company that provide one to one Doctor-patient help with  Effective homeopathic and Ayurvedic medications for treating lung carcinoma It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout structure."
+            android:layout_marginTop="36dp"/>
 
         <LinearLayout
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -41,6 +46,7 @@
                 android:layout_margin="6dp"
                 android:background="@drawable/buttonstylepink"
                 android:textColor="#000"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Learn More"
@@ -48,6 +54,7 @@
             <Button
                 android:layout_margin="6dp"
                 android:textColor="#000"
+
                 android:background="@drawable/buttonstylepink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,19 +64,20 @@
 
         </LinearLayout>
         <Button
-            android:background="@drawable/buttonstyle2"
+            android:background="@drawable/buttonstyle"
             android:textSize="20sp"
             android:text="Take Tour"
-            android:textColor="#fff"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/layout"
             android:layout_gravity="center"
 
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_margin="60dp"/>
+    />
 
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
