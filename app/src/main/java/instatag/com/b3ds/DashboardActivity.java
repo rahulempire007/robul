@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity {
     LinearLayout profilelayout,visitReportlayout,checkMsg_Layout,patient_history_layout;
@@ -41,8 +42,11 @@ patient_history_layout=(LinearLayout)findViewById(R.id.patient_history_layout);
 visitReportlayout.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        Intent intent=new Intent(DashboardActivity.this,VisitReportActivity.class);
-        startActivity(intent);
+
+        Toast.makeText(DashboardActivity.this,"Purchase Plan to use this facility",Toast.LENGTH_SHORT).show();
+
+        //Intent intent=new Intent(DashboardActivity.this,VisitReportActivity.class);
+        //startActivity(intent);
     }
 });
         profilelayout.setOnClickListener(new View.OnClickListener() {

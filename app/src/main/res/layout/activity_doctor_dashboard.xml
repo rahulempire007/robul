@@ -14,7 +14,7 @@
     android:layout_height="match_parent"
     tools:context="instatag.com.b3ds.DashboardActivity"
     android:padding="10dp"
-    android:background="#fff"
+    android:background="@drawable/navimage"
     android:gravity="center"
     android:id="@+id/ll">
 

@@ -23,7 +23,7 @@
             android:textSize="30sp"
             android:textColor="#fff"
             android:textStyle="bold"
-            android:text="Welcome to B3 "/>
+            android:text="Welcome to Feish "/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +33,14 @@
 
 
 
-            android:text="Digital Info solution company that provide one to one Doctor-patient help with  Effective homeopathic and Ayurvedic medications for treating lung carcinoma It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout structure."
-            android:layout_marginTop="36dp"/>
+            android:text="For millions of people,Feish is a well trusted home care for health,
+It connects them with everything they need to take good care of themselves and their loved ones,
+to finding the right doctor ,booking and to connect with them,
+Booking diagnostic tests, obtaining medicines,strong health records or learning new ways to live healthier"
+            android:layout_marginTop="30dp"/>
 
         <LinearLayout
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="35dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -68,12 +71,13 @@
             android:textSize="20sp"
             android:text="Take Tour"
             android:textColor="#000"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_below="@+id/layout"
             android:layout_gravity="center"
 
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
+
     />
 
 
